@@ -49,18 +49,20 @@ class Solution:
             
         return head 
 
-        # Problem 3 Maximum length string
-        def lengthOfLongestSubstring(self, s: str) -> int:
-            start=mresult=0
-            store={}
-            for i in range(len(s)):
-                if s[i] not in store or store[s[i]]<start:
-                    result=i-start+1
-                    mresult=max(result,mresult)
-                else:
-                    start=store[s[i]]+1
-                store[s[i]]=i
-            return mresult
+    # Problem 3 Maximum length string
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        start=mresult=0
+        store={}
+        for i in range(len(s)):
+            if s[i] not in store or store[s[i]]<start:
+                result=i-start+1
+                mresult=max(result,mresult)
+            else:
+                start=store[s[i]]+1
+            store[s[i]]=i
+        return mresult
+
+
             
 
 
